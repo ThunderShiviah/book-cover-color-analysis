@@ -36,7 +36,7 @@ def get_avg_rgb(url_list, json_object):
 
 def main():
     """Main entry point for the script."""
-    f = open('json_good.json')
+    f = open('../data/json_good.json')  #Make sure this file is in the right path!
     json_object = json.load(f)
     url_list =  load_json_file(json_object)
       
