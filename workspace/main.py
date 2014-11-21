@@ -9,13 +9,15 @@ def load_json_file(json_object):
    
     list = []
     for year in range(0,13):                #This is inelegant. Fix it.
-        print json_object['key'][year]['id_number']
+        #print json_object['key'][year]['id_number']
         list.append(json_object['key'][year]['book_cover_url'])
     return list
     pass
 
 def get_avg_rgb(url_list, json_object):
     """Gets average rgb values from book covers by querying a color API using requests"""
+    url = 'http://mkweb.bcgsc.ca/color_summarizer/?xml=1&url='
+    
     color_list = []
     for year in range(0,13):
          

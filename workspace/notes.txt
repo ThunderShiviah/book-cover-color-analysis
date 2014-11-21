@@ -1,0 +1,57 @@
+Currently running the kcluster matlab script.
+
+Initial output (10 July 2014):
+  iter	 phase	     num	         sum
+     1	     1	     260	       16870
+     2	     1	      23	       16190
+     3	     1	       5	       16152
+     4	     1	       3	       16141
+     5	     1	       6	       16095
+     6	     1	       1	       16091
+     7	     2	       0	       16091
+Best total sum of distances = 16091
+Replicate 1, 12 iterations, total sum of distances = 14874.
+Replicate 2, 19 iterations, total sum of distances = 14872.
+Replicate 3, 32 iterations, total sum of distances = 14872.
+Replicate 4, 7 iterations, total sum of distances = 14872.
+Replicate 5, 10 iterations, total sum of distances = 14874.
+Best total sum of distances = 14872
+
+Procedure: 
+I generated clustering silhouettes of 2-9 clusters and saved them in a file named figures found in my workplace directory.
+
+Observations:
+Looking through the figures, I observed (subjectively) that the silhouettes with the smallest negative silhouette values 
+(both in terms of quantity and magnitude) seemed to be the 3 and 4 clusters, with 4 clusters having the smallest negative values in 
+both quantity and magnitude. 
+
+========================================================================
+Plotting colors in 3-space
+
+After loading my data using importdata([filename.txt]), I separated the data into three vectors:
+x = data(:,1)
+y = data(:,2)
+z = data(:,3)
+
+then used scatter3(x,y,z) to generate a scatterplot in three dimensions
+=========================================================
+Gradient decent in 3-space
+
+NEED TO COMPLETE
+
+=========================================================
+Observations:
+
+Since I stripped the rgb values of distinguishing characteristics such as rank and year, any sort of
+pattern I find given the stripped values should correspond to any underlying structure of the book cover colors as a whole.
+Furthermore, the most revealing insights into the structure of the data may not be where the data points are, but rather where they 
+are not. In other words, my intuition tells me that it would be revealing if I could find holes of some sort where no covers lie. 
+
+Future analyses may involve separating data by year and rank. Again, a heat map-esque plot with x-axis as year and y-axis as rank would be 
+qualitatively interesting. Furthermore, if I got such a heat map, I could actually look at the average color value of the heat map
+as a whole which I would expect to reveal the centroid of the data for a single cluster. 
+
+Furthermore, if I could actually take the color map and look for a sort of eigen cover perhaps I could find a 'basis' to my color map.
+I would expect this basis to contain as its eigenvectors the centroids of the best fit clustering model.
+
+Finally, I need to think about the best way to package this analysis. For packaging, I should refer to the link from professor Bothun.
